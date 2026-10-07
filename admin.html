@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery admin -orders</title>
+
+    <style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f3ef;
+    color: #2f2a26;
+}
+
+/* Header */
+.admin-header {
+    background: #3b2922;
+    color: white;
+    padding: 22px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.admin-header p {
+    margin: 5px 0 0;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+/* Main area */
+.admin-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Summary cards */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.summary-card h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #777;
+}
+
+.summary-card strong {
+    font-size: 28px;
+}
+
+/* Orders */
+#orders {
+    display: grid;
+    gap: 20px;
+}
+
+.order-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #8b5e3c;
+    transition: 0.2s;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.11);
+}
+
+.order-card h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.order-card p {
+    margin: 9px 0;
+    line-height: 1.5;
+}
+
+.order-card select {
+    padding: 9px 14px;
+    border: 1px solid #d8cfc8;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #faf8f6;
+    color: #3b2922;
+    cursor: pointer;
+    outline: none;
+}
+
+.order-card select:focus {
+    border-color: #8b5e3c;
+    box-shadow: 0 0 0 2px rgba(139, 94, 60, 0.12);
+}
+
+/* Buttons */
+.admin-button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background: white;
+    color: #3b2922;
+}
+
+.admin-button:hover {
+    opacity: 0.9;
+}
+
+.refresh-button {
+    display: block;
+    margin: 0 0 20px auto;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 9px;
+    background: #3b2922;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.refresh-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-header {
+        padding: 18px;
+    }
+
+    .admin-container {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .summary {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+    <script>
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "admin-login.html";
+    }
+</script>
+    <header class="admin-header">
+    <div>
+        <h1>🍰 Bakery Admin</h1>
+        <p>Order Management Dashboard</p>
+    </div>
+
+    <button class="admin-button" onclick="logoutAdmin()">
+        Logout
+    </button>
+</header>
+
+<main class="admin-container">
+
+    <div class="summary">
+
+        <div class="summary-card">
+            <h3>Total Orders</h3>
+            <strong id="totalOrders">0</strong>
+        </div>
+
+        <div class="summary-card">
+            <h3>Pending</h3>
+            <strong id="pendingOrders">0</strong>
+        </div>
+
+        <div class="summary-card">
+            <h3>Preparing</h3>
+            <strong id="preparingOrders">0</strong>
+        </div>
+
+        <div class="summary-card">
+            <h3>Delivered</h3>
+            <strong id="deliveredOrders">0</strong>
+        </div>
+
+    </div>
+
+
+    <button class="refresh-button" onclick="location.reload()">
+    🔄 Refresh Orders
+</button>
+    <div id="orders">
+        Loading orders...
+    </div>
+<h2>Contact Messages</h2>
+
+<div id="contactMessages">
+    Loading messages...
+</div>
+</main>
+
+    <script>
+    fetch("http://localhost:3000/api/customer-orders")
+        .then(response => response.json())
+        .then(orders => {
+
+            const ordersContainer = document.getElementById("orders");
+
+            if (orders.length === 0) {
+                ordersContainer.innerHTML = "<p>No orders yet.</p>";
+                return;
+            }
+
+            ordersContainer.innerHTML = "";
+
+            let pendingCount = 0;
+let preparingCount = 0;
+let deliveredCount = 0;
+
+orders.forEach(function(order) {
+
+    if (order.status === "Pending") {
+        pendingCount++;
+    }
+
+    if (order.status === "Preparing") {
+        preparingCount++;
+    }
+
+    if (order.status === "Delivered") {
+        deliveredCount++;
+    }
+});
+
+document.getElementById("totalOrders").innerHTML = orders.length;
+document.getElementById("pendingOrders").innerHTML = pendingCount;
+document.getElementById("preparingOrders").innerHTML = preparingCount;
+document.getElementById("deliveredOrders").innerHTML = deliveredCount;
+
+            orders.forEach(order => {
+                const items = JSON.parse(order.items);
+
+               const orderDiv = document.createElement("div");
+orderDiv.className = "order-card";
+
+                orderDiv.innerHTML = `
+                    <h2>Order #${order.id}</h2>
+<p>
+    <strong>Status:</strong>
+    <select onchange="updateStatus(${order.id}, this.value)">
+        <option value="Pending" ${order.status === "Pending" ? "selected" : ""}>Pending</option>
+        <option value="Confirmed" ${order.status === "Confirmed" ? "selected" : ""}>Confirmed</option>
+        <option value="Preparing" ${order.status === "Preparing" ? "selected" : ""}>Preparing</option>
+        <option value="Out for Delivery" ${order.status === "Out for Delivery" ? "selected" : ""}>Out for Delivery</option>
+        <option value="Delivered" ${order.status === "Delivered" ? "selected" : ""}>Delivered</option>
+    </select>
+</p>                    <p><strong>Phone:</strong> ${order.phone}</p>
+                    <p><strong>Email:</strong> ${order.email}</p>
+                    <p><strong>Address:</strong> ${order.address}</p>
+                    <p><strong>Items:</strong> ${items.join(", ")}</p>
+                    <p><strong>Total:</strong> ₹${order.total}</p>
+                    <p><strong>Ordered:</strong> ${new Date(order.createdAt).toLocaleString()}</p>
+                    <p><strong>Status:</strong> ${order.status}</p>
+                    <hr>
+                `;
+
+                ordersContainer.appendChild(orderDiv);
+            });
+        })
+        .catch(error => {
+            console.error("Error loading orders:", error);
+            document.getElementById("orders").innerHTML =
+                "<p>Could not load orders.</p>";
+        });
+
+        function updateStatus(orderId, status) {
+
+    fetch(`http://localhost:3000/api/customer-orders/${orderId}/status`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            status: status
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        if (data.success) {
+            alert("Order status updated successfully!");
+        } else {
+            alert(data.message);
+        }
+
+    })
+    .catch(error => {
+        console.error("Status update error:", error);
+        alert("Could not update order status.");
+    });
+}
+function logoutAdmin() {
+    sessionStorage.removeItem("adminLoggedIn");
+    window.location.href = "admin-login.html";
+}
+</script>
+<script>
+async function loadContactMessages() {
+    try {
+        const response = await fetch("/api/contact-messages");
+        const messages = await response.json();
+
+        const container = document.getElementById("contactMessages");
+
+        if (messages.length === 0) {
+            container.innerHTML = "<p>No contact messages yet.</p>";
+            return;
+        }
+
+        container.innerHTML = messages.map(msg => `
+            <div style="border:1px solid #ddd; padding:15px; margin:10px 0; border-radius:8px;">
+                <strong>${msg.name}</strong><br>
+                <small>${msg.email}</small>
+                <p>${msg.message}</p>
+                <small>${new Date(msg.createdAt).toLocaleString()}</small>
+            </div>
+        `).join("");
+
+    } catch (error) {
+        document.getElementById("contactMessages").innerHTML =
+            "<p>Unable to load messages.</p>";
+    }
+}
+
+loadContactMessages();
+</script>
+</body>
+</html>

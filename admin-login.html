@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bakery Admin Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #f6f3ef;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #3b2922;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin: 8px 0 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #8b5e3c;
+            box-shadow: 0 0 0 2px rgba(139, 94, 60, 0.12);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #3b2922;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            opacity: 0.9;
+        }
+
+        #loginMessage {
+            margin-top: 15px;
+            color: #c0392b;
+            font-size: 14px;
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+
+        <div class="logo">🍰</div>
+
+        <h1>Bakery Admin</h1>
+
+        <p class="subtitle">
+            Sign in to manage your bakery orders
+        </p>
+
+        <div class="input-group">
+            <label for="adminPassword">Admin Password</label>
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Enter your password"
+            >
+        </div>
+
+        <button class="login-button" onclick="loginAdmin()">
+            Login to Dashboard
+        </button>
+
+        <p id="loginMessage"></p>
+
+        <div class="footer-text">
+            Bakery Management System
+        </div>
+
+    </div>
+
+    <script>
+        function loginAdmin() {
+
+            const password =
+                document.getElementById("adminPassword").value;
+
+            fetch("http://localhost:3000/api/admin-login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    password: password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                if (data.success) {
+
+                    sessionStorage.setItem(
+                        "adminLoggedIn",
+                        "true"
+                    );
+
+                    window.location.href = "admin.html";
+
+                } else {
+
+                    document.getElementById("loginMessage").innerHTML =
+                        "Incorrect password";
+
+                }
+
+            })
+            .catch(error => {
+
+                console.error("Login error:", error);
+
+                document.getElementById("loginMessage").innerHTML =
+                    "Could not connect to server.";
+
+            });
+        }
+    </script>
+
+</body>
+</html>

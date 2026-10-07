@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumbs Bakery</title>
+    <style type="text/css">
+        /* ===== STEP 7: PROFESSIONAL FOOTER ===== */
+
+.site-footer {
+    background: #3b2118;
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 25px 25px;
+}
+
+.footer-brand h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+
+.footer-brand p {
+    color: #e8d5cb;
+    font-size: 15px;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d9a58d;
+}
+
+.footer-copy {
+    margin: 25px 0 0;
+    color: #cdb8ae;
+    font-size: 13px;
+}
+         /* ===== STEP 4: PREMIUM ABOUT SECTION ===== */
+
+.about {
+    text-align: center;
+    padding: 85px 25px;
+    background: #fff7f1;
+    border-top: 1px solid #f1e2d8;
+    border-bottom: 1px solid #f1e2d8;
+}
+
+.about h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    color: #542718;
+    margin-bottom: 25px;
+}
+
+.about p {
+    max-width: 720px;
+    margin: auto;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #765548;
+}
+        /* ===== STEP 3: CATEGORY STRIP ===== */
+
+.category-strip {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 22px 20px;
+    background: #fffaf6;
+    border-top: 1px solid #f2e5dd;
+    border-bottom: 1px solid #f2e5dd;
+}
+
+.category-strip span {
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #6b2d1a;
+    border: 1px solid #ead8ce;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+}
+        body{
+             margin:0;
+             font-family: Arial, sans-serif;
+
+        }
+        nav{
+            background-color: brown;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+           color: white;
+           text-decoration: none;
+           margin: 0 20px;
+           font-size: 18px; 
+        }
+
+        .hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #fff8f0, #f8e1d0);
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 58px;
+    color: #6b2d1a;
+    margin: 0 0 15px;
+    font-family: Georgia, serif;
+}
+
+.hero p {
+    font-size: 24px;
+    color: #765548;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #6b2d1a;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(107, 45, 26, 0.25);
+}
+        .hero h1{
+            font-size: 50px;
+            color: brown;
+            margin-bottom: 10px;
+        }
+        .hero p{
+            font-size: 22px;
+            color: gray;
+        }
+        .hero button{
+            background-color: brown;
+            color: white;
+            border:none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .menu {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.menu h2 {
+    font-size: 35px;
+    color: brown;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 250px;
+    padding: 18px;
+    background: #fffaf6;
+    border-radius: 16px;
+    border: 1px solid #f0ddd2;
+    box-shadow: 0 6px 18px rgba(80, 40, 20, 0.10);
+    transition: all 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(80, 40, 20, 0.18);
+}
+
+.product h3 {
+    color: #6b2d1a;
+    font-size: 21px;
+    margin: 15px 0 8px;
+}
+
+.product p {
+    color: #765548;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.product img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: antiquewhite;
+}
+
+.about h2 {
+    color: brown;
+    font-size: 35px;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+    color: gray;
+}
+
+.contact {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact h2 {
+    color: brown;
+    font-size: 35px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 120px;
+}
+
+form button {
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+ @media (max-width: 600px) {
+
+    nav a {
+        display: block;
+        margin: 10px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+    width: 250px;
+    padding: 18px;
+    background: #fffaf6;
+    border-radius: 16px;
+    border: 1px solid #f0ddd2;
+    box-shadow: 0 6px 18px rgba(80, 40, 20, 0.10);
+    transition: all 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+}
+
+.product button {
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.product button:hover {
+    background-color: darkred;
+}
+
+.cart {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: antiquewhite;
+}
+
+.cart h2 {
+    color: brown;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+#cartItems {
+    max-width: 500px;
+    margin: auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 2;
+    color: gray;
+}
+
+.cart button {
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    margin-top: 20px;
+    border-radius: 25px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.cart button:hover {
+    background-color: darkred;
+}
+
+/* Professional Checkout Form */
+#checkoutForm {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+#checkoutForm h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#checkoutForm input,
+#checkoutForm textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+#checkoutForm textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#checkoutForm input:focus,
+#checkoutForm textarea:focus {
+    border-color: #c98b5b;
+    box-shadow: 0 0 0 2px rgba(201, 139, 91, 0.12);
+}
+
+#checkoutForm input::placeholder,
+#checkoutForm textarea::placeholder {
+    color: #999;
+}
+  
+.checkout-button {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto 30px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.checkout-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.checkout-button:active {
+    transform: translateY(0);
+}
+
+/* ===== STEP 1: PREMIUM HEADER + HERO ===== */
+
+body {
+    background: #fffaf6;
+    color: #3d2923;
+}
+
+/* Header */
+nav {
+    background: #ffffff;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    border-bottom: 1px solid #f0e4dc;
+    box-shadow: 0 2px 12px rgba(60, 35, 20, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #4b2e24;
+    text-decoration: none;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #b56545;
+}
+
+/* Order counter */
+.order-counter {
+    position: fixed;
+    right: 25px;
+    top: 75px;
+    z-index: 999;
+    background: #6b2d1a;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(80, 40, 20, 0.2);
+}
+
+/* Hero */
+.hero {
+    min-height: 520px;
+    padding: 70px 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255, 248, 240, 0.88),
+            rgba(255, 240, 225, 0.92)
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.1;
+    color: #542718;
+    margin: 0 0 18px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 21px;
+    color: #765548;
+    margin: 0 0 32px;
+    letter-spacing: 0.3px;
+}
+
+.hero button {
+    background: #6b2d1a;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 7px 18px rgba(107, 45, 26, 0.18);
+}
+
+.hero button:hover {
+    background: #542218;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(107, 45, 26, 0.25);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    nav {
+        padding: 15px 10px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .order-counter {
+        right: 12px;
+        top: 110px;
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+/* ===== STEP 2: PREMIUM PRODUCT CARDS ===== */
+
+.menu {
+    background: #ffffff;
+    padding: 80px 30px;
+}
+
+.menu h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    color: #542718;
+    margin-bottom: 45px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 280px;
+    padding: 0 0 25px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #eee1d9;
+    box-shadow: 0 6px 22px rgba(60, 35, 20, 0.08);
+    transition: 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 32px rgba(60, 35, 20, 0.15);
+}
+
+.product img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+}
+
+.product h3 {
+    color: #542718;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    margin: 20px 15px 8px;
+}
+
+.product p {
+    color: #765548;
+    font-size: 15px;
+    margin: 8px 15px 18px;
+}
+
+.product button {
+    background: #6b2d1a;
+    color: white;
+    border: none;
+    padding: 11px 24px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.product button:hover {
+    background: #542218;
+    transform: translateY(-2px);
+}
+
+/* ===== STEP 5: PREMIUM CONTACT SECTION ===== */
+
+.contact {
+    text-align: center;
+    padding: 85px 25px;
+    background: #ffffff;
+}
+
+.contact h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    color: #542718;
+    margin-bottom: 15px;
+}
+
+.contact::after {
+    content: "We'd love to hear from you";
+    display: block;
+    color: #8a6a5c;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.contact form {
+    max-width: 520px;
+    margin: auto;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fffaf6;
+    border: 1px solid #eee1d9;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(60, 35, 20, 0.08);
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    margin: 8px 0 14px;
+    border: 1px solid #dfcec4;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #3d2923;
+    font-size: 15px;
+    outline: none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #b87858;
+    box-shadow: 0 0 0 3px rgba(184, 120, 88, 0.10);
+}
+
+.contact textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.contact form button {
+    background: #6b2d1a;
+    color: #ffffff;
+    border: none;
+    padding: 13px 30px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact form button:hover {
+    background: #542218;
+    transform: translateY(-2px);
+}
+
+
+/* ===== STEP 6: PREMIUM CART & CHECKOUT ===== */
+
+.cart {
+    text-align: center;
+    padding: 85px 25px;
+    background: #fff7f1;
+    border-top: 1px solid #f1e2d8;
+}
+
+.cart h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    color: #542718;
+    margin-bottom: 35px;
+}
+
+#cartItems {
+    max-width: 550px;
+    margin: auto;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #eee1d9;
+    box-shadow: 0 7px 22px rgba(60, 35, 20, 0.08);
+    font-size: 17px;
+    line-height: 2;
+    color: #765548;
+    box-sizing: border-box;
+}
+
+.cart button {
+    background: #6b2d1a;
+    color: #ffffff;
+    border: none;
+    padding: 13px 30px;
+    margin-top: 22px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cart button:hover {
+    background: #542218;
+    transform: translateY(-2px);
+}
+
+/* Checkout form */
+
+#checkoutForm {
+    max-width: 550px;
+    margin: 35px auto 10px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #eee1d9;
+    box-shadow: 0 7px 22px rgba(60, 35, 20, 0.08);
+    box-sizing: border-box;
+}
+
+#checkoutForm h3 {
+    color: #542718;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+#checkoutForm input,
+#checkoutForm textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    margin-bottom: 15px;
+    border: 1px solid #dfcec4;
+    border-radius: 10px;
+    background: #fffaf6;
+    font-size: 15px;
+    outline: none;
+}
+
+#checkoutForm input:focus,
+#checkoutForm textarea:focus {
+    border-color: #b87858;
+    box-shadow: 0 0 0 3px rgba(184, 120, 88, 0.10);
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    margin: 15px auto 0;
+    padding: 15px;
+    background: #6b2d1a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.checkout-button:hover {
+    background: #542218;
+    transform: translateY(-2px);
+}
+
+/* ===== STEP 8: PREMIUM HERO DETAILS ===== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft decorative bakery shapes */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(198, 137, 103, 0.10);
+    top: -120px;
+    left: -100px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(198, 137, 103, 0.10);
+    bottom: -100px;
+    right: -70px;
+}
+
+/* Keep hero content above decorations */
+.hero h1,
+.hero p,
+.hero button {
+    position: relative;
+    z-index: 2;
+}
+   
+/* ===== STEP 9: PRODUCT SECTION TITLE ===== */
+
+.menu h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.menu h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    background: #b87858;
+    border-radius: 10px;
+    margin: 12px auto 0;
+}
+/* ===== STEP 10: PRODUCT PRICE EMPHASIS ===== */
+
+.product p {
+    font-size: 15px;
+    color: #765548;
+}
+
+.product p:has(+ button) {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6b2d1a;
+    margin-bottom: 18px;
+}
+  /* ===== STEP 11: BAKERY BRANDING ===== */
+
+nav::before {
+    content: "🍰 Sweet Crumbs";
+    position: absolute;
+    left: 35px;
+    color: #542718;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    position: sticky;
+}
+
+@media (max-width: 800px) {
+    nav::before {
+        position: static;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+/* ===== STEP 13: MOBILE POLISH ===== */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Header */
+    nav {
+        padding: 15px 10px;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 0 4px;
+    }
+
+    /* Order counter */
+    .order-counter {
+        right: 10px;
+        top: 115px;
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 430px;
+        padding: 55px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .hero button {
+        padding: 13px 25px;
+        font-size: 15px;
+    }
+
+    /* Categories */
+    .category-strip {
+        gap: 8px;
+        padding: 18px 12px;
+    }
+
+    .category-strip span {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    /* Products */
+    .menu {
+        padding: 60px 15px;
+    }
+
+    .menu h2 {
+        font-size: 34px;
+    }
+
+    .product {
+        width: min(100%, 320px);
+    }
+
+    /* About */
+    .about {
+        padding: 65px 20px;
+    }
+
+    .about h2 {
+        font-size: 34px;
+    }
+
+    /* Cart */
+    .cart {
+        padding: 65px 15px;
+    }
+
+    .cart h2 {
+        font-size: 34px;
+    }
+
+    #cartItems,
+    #checkoutForm {
+        width: 100%;
+        padding: 22px;
+    }
+
+    /* Contact */
+    .contact {
+        padding: 65px 15px;
+    }
+
+    .contact h2 {
+        font-size: 34px;
+    }
+
+    .contact form {
+        padding: 22px;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 45px 20px 25px;
+    }
+}
+
+   /* ===== STEP 14: SLIDING HERO BACKGROUND ===== */
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    animation: bakerySlideshow 15s infinite;
+}
+
+@keyframes bakerySlideshow {
+    0%, 30% {
+        background-image:
+            linear-gradient(
+                rgba(255, 248, 240, 0.78),
+                rgba(255, 240, 225, 0.82)
+            ),
+            url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80");
+    }
+
+    33%, 63% {
+        background-image:
+            linear-gradient(
+                rgba(255, 248, 240, 0.78),
+                rgba(255, 240, 225, 0.82)
+            ),
+            url("https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=1600&q=80");
+    }
+
+    66%, 96% {
+        background-image:
+            linear-gradient(
+                rgba(255, 248, 240, 0.78),
+                rgba(255, 240, 225, 0.82)
+            ),
+            url("https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1600&q=80");
+    }
+
+    100% {
+        background-image:
+            linear-gradient(
+                rgba(255, 248, 240, 0.78),
+                rgba(255, 240, 225, 0.82)
+            ),
+            url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80");
+    }
+}
+
+/* Smooth hero photo effect */
+
+.hero {
+    transition: background-image 1.5s ease-in-out;
+}
+
+/* Professional overlay for hero slideshow */
+
+.hero {
+    position: relative;
+}
+
+.hero h1,
+.hero p,
+.hero button {
+    position: relative;
+    z-index: 3;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <section class="hero" id="home">
+        
+    
+    <h1>Sweet Crumbs Bakery</h1>
+    <p>Freshly Baked With Love</p>
+    <button onclick="location.href='#menu'">Explore Our Menu</button>
+
+    </section>
+<div class="category-strip">
+    <span>Cakes</span>
+    <span>Pastries</span>
+    <span>Cupcakes</span>
+    <span>Brownies</span>
+    <span>Cookies</span>
+    <span>Desserts</span>
+</div>
+    <section class="menu" id="menu">
+
+<h2>Our Best Sellers</h2>
+
+    <div class="products">
+
+        <div class="product">
+           <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>Rich and delicious chocolate cake.</p>
+            <p>₹500</p>
+            <button onclick="addToOrder('Chocolate Cake')">
+                     Add to order               
+            </button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d" alt="Strawberry Cupcake">
+            <h3>Strawberry Cupcake</h3>
+            <p>Soft cupcake with strawberry cream.</p>
+            <p>₹120</p>
+            <button onclick="addToOrder('Strawberry Cupcake')">
+    Add to Order
+</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e" alt="Chocolate Cookies">
+            <h3>Chocolate Cookies</h3>
+            <p>Freshly baked chocolate cookies.</p>
+            <p>₹200</p>
+            <button onclick="addToOrder('Chocolate Cookies')">
+    Add to Order
+</button>
+        </div>
+
+    </div>
+
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>
+            At Sweet Crumbs Bakery, we believe every day deserves something sweet. We bake fresh cakes, cupcakes and cookies using quality ingredients and lots of love.
+        </p>
+
+    </section>
+
+</section>
+<section class="cart">
+
+    <h2>Your Cart</h2>
+
+    <div id="cartItems">
+        Your cart is empty.
+    </div>
+    <div id="checkoutForm">
+
+    <h3>Customer Details</h3>
+
+    <input
+        type="text"
+        id="customerName"
+        placeholder="Your Name"
+        required
+    >
+
+    <input
+        type="tel"
+        id="customerPhone"
+        placeholder="Phone Number"
+        required
+    >
+
+    <input
+        type="email"
+        id="customerEmail"
+        placeholder="Email Address"
+    >
+
+    <textarea
+        id="customerAddress"
+        placeholder="Delivery Address"
+        required
+    ></textarea>
+
+</div>
+
+    <button class="checkout-button" onclick="placeOrder()">
+    Place Order
+</button>
+
+</section>
+<section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+
+        <input type="text" placeholder="Your Name">
+
+        <input type="email" placeholder="Your Email">
+
+        <textarea placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+<script type="text/javascript">
+
+let cartItems = [];
+
+function addToOrder(product) {
+
+    orderCount = orderCount + 1;
+
+    document.getElementById("orderCount").innerHTML = orderCount;
+
+    cartItems.push(product);
+
+    let quantities = {};
+
+    cartItems.forEach(function(item) {
+        if (quantities[item]) {
+            quantities[item] = quantities[item] + 1;
+        } else {
+            quantities[item] = 1;
+        }
+    });
+
+   let cartText = "";
+let total = 0;
+
+for (let item in quantities) {
+
+    let price = 0;
+
+    if (item === "Chocolate Cake") {
+        price = 500;
+    }
+
+    if (item === "Strawberry Cupcake") {
+        price = 120;
+    }
+
+    if (item === "Chocolate Cookies") {
+        price = 200;
+    }
+
+    let quantity = quantities[item];
+    let itemTotal = price * quantity;
+
+    cartText +=
+        "<div>" +
+        item +
+        " × " +
+        quantity +
+        " — ₹" +
+        itemTotal +
+        "</div>";
+
+    total = total + itemTotal;
+}
+
+    document.getElementById("cartItems").innerHTML =
+        cartText +
+        "<hr><strong>Total: ₹" + total + "</strong>";
+        updateCart();
+    alert(product + " added to your order!");
+ }   
+
+function updateCart() {
+
+    let quantities = {};
+    let total = 0;
+    let cartText = "";
+
+    cartItems.forEach(function(item) {
+
+        if (quantities[item]) {
+            quantities[item] = quantities[item] + 1;
+        } else {
+            quantities[item] = 1;
+        }
+
+    });
+
+    for (let item in quantities) {
+
+        let price = 0;
+
+        if (item === "Chocolate Cake") {
+            price = 500;
+        }
+
+        if (item === "Strawberry Cupcake") {
+            price = 120;
+        }
+
+        if (item === "Chocolate Cookies") {
+            price = 200;
+        }
+
+        let quantity = quantities[item];
+        let itemTotal = price * quantity;
+
+        cartText +=
+            "<div>" +
+            "<strong>" + item + "</strong>" +
+            " × " + quantity +
+            " — ₹" + itemTotal +
+            "<br>" +
+            "<button type=\"button\" onclick=\"changeQuantity('" + item + "', -1)\">−</button> " +
+            "<button type=\"button\" onclick=\"changeQuantity('" + item + "', 1)\">+</button> " +
+            "<button type=\"button\" onclick=\"removeItem('" + item + "')\">Remove</button>" +
+            "</div><br>";
+
+        total = total + itemTotal;
+    }
+
+    document.getElementById("cartItems").innerHTML =
+        cartText +
+        "<hr><strong>Total: ₹" +
+        total +
+        "</strong>";
+}
+function changeQuantity(product, amount) {
+
+    if (amount > 0) {
+        cartItems.push(product);
+    }
+
+    if (amount < 0) {
+
+        const index = cartItems.indexOf(product);
+
+        if (index >= 0) {
+            cartItems.splice(index, 1);
+        }
+    }
+
+    orderCount = cartItems.length;
+
+    document.getElementById("orderCount").innerHTML = orderCount;
+
+    updateCart();
+}
+
+
+
+
+function removeItem(product) {
+
+    let newCart = [];
+
+    cartItems.forEach(function(item) {
+
+        if (item !== product) {
+            newCart.push(item);
+        }
+
+    });
+
+    cartItems = newCart;
+
+    orderCount = cartItems.length;
+
+    document.getElementById("orderCount").innerHTML = orderCount;
+
+    updateCart();
+}
+
+function placeOrder() {
+
+    if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    let total = 0;
+
+    cartItems.forEach(function(item) {
+
+    if (item === "Chocolate Cake") {
+        total = total + 500;
+    }
+
+    if (item === "Strawberry Cupcake") {
+        total = total + 120;
+    }
+
+    if (item === "Chocolate Cookies") {
+        total = total + 200;
+    }
+
+});
+
+const customerName = document.getElementById("customerName").value;
+    const customerPhone = document.getElementById("customerPhone").value;
+    const customerEmail = document.getElementById("customerEmail").value;
+    const customerAddress = document.getElementById("customerAddress").value;
+
+    if (!customerName || !customerPhone || !customerAddress) {
+        alert("Please fill in your name, phone number, and delivery address.");
+        return;
+    }
+
+   fetch("/api/customer-orders", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            customerName: customerName,
+            phone: customerPhone,
+            email: customerEmail,
+            address: customerAddress,
+            items: cartItems,
+            total: total
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        if (data.success) {
+            alert("Your order has been placed successfully! 🎉");
+
+            cartItems = [];
+            orderCount = 0;
+
+            document.getElementById("orderCount").innerHTML = orderCount;
+            document.getElementById("cartItems").innerHTML = "";
+            document.getElementById("customerName").value = "";
+document.getElementById("customerPhone").value = "";
+document.getElementById("customerEmail").value = "";
+document.getElementById("customerAddress").value = "";
+
+
+
+        } else {
+            alert(data.message);
+        }
+
+    })
+    .catch(error => {
+        console.error("Order error:", error);
+        alert("Could not place the order. Please try again.");
+    });
+
+    fetch("/api/place-order", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            items: cartItems,
+            total: total
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        if (data.success) {
+            alert("Your order has been placed successfully! 🎉");
+
+            cartItems = [];
+            orderCount = 0;
+
+            document.getElementById("orderCount").innerHTML = orderCount;
+            document.getElementById("cartItems").innerHTML = "";
+        } else {
+            alert(data.message);
+        }
+
+    })
+    .catch(error => {
+        console.error("Order error:", error);
+        alert("Could not place the order. Please try again.");
+    });
+}
+    </script>
+
+    <script>
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const message = this.querySelector("textarea").value;
+
+    try {
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                message
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Thank you! Your message has been sent.");
+            this.reset();
+        } else {
+            alert(data.message || "Something went wrong.");
+        }
+    } catch (error) {
+        alert("Unable to send your message. Please try again.");
+    }
+});
+</script>
+
+
+<footer class="site-footer">
+    <div class="footer-brand">
+        <h2>Sweet Crumbs Bakery</h2>
+        <p>Freshly baked with love, just for you.</p>
+    </div>
+
+    <p class="footer-copy">
+        © 2026 Sweet Crumbs Bakery. All rights reserved.
+    </p>
+</footer>
+</body>
+</html>
